@@ -1,6 +1,25 @@
 {
-  "devDependencies": {
-    "@types/node": "^25.0.3",
-    "ts-node": "^10.9.2"
-  }
+	"name": "json-parser-ts",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"start": "node dist/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/itsLys/json-parser-ts.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/itsLys/json-parser-ts/issues"
+	},
+	"homepage": "https://github.com/itsLys/json-parser-ts#readme",
+	"devDependencies": {
+		"@types/node": "^25.0.3",
+		"typescript": "^5.9.3"
+	}
 }
