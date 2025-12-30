@@ -3,7 +3,7 @@ import { TokenType } from "./definitions"
 
 export function printToken({ type, value, position }: Token) {
 	console.log(
-		`${TokenType[type].padEnd(10)}|` +
+		`${type.padEnd(10)}|` +
 		`${String(value).padEnd(10)}|` +
 		`${position}`);
 }
@@ -18,4 +18,3 @@ export function printTokens(tokenArr: Token[]) {
 		printToken(token);
 	}
 }
-

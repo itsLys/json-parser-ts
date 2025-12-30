@@ -1,27 +1,52 @@
+// export enum TokenType {
+// 	LBRACE,
+// 	RBRACE,
+// 	LBRACKET,
+// 	RBRACKET,
+// 	COLON,
+// 	COMMA,
+//
+// 	STRING,
+// 	NUMBER,
+// 	TRUE,
+// 	FALSE,
+// 	NULL,
+//
+// 	EOF
+// }
+//
+// export enum NodeType {
+// 	OBJECT,
+// 	ARRAY,
+// 	STRING,
+// 	NUMBER,
+// 	BOOLEAN,
+// 	NULL
+// }
+// NOTE: Use string enums for now (debugging)
+
 export enum TokenType {
-	LBRACE,
-	RBRACE,
-	LBRACKET,
-	RBRACKET,
-	COLON,
-	COMMA,
-
-	STRING,
-	NUMBER,
-	TRUE,
-	FALSE,
-	NULL,
-
-	EOF
+	LBRACE = "LBRACE",
+	RBRACE = "RBRACE",
+	LBRACKET = "LBRACKET",
+	RBRACKET = "RBRACKET",
+	COLON = "COLON",
+	COMMA = "COMMA",
+	STRING = "STRING",
+	NUMBER = "NUMBER",
+	TRUE = "TRUE",
+	FALSE = "FALSE",
+	NULL = "NULL",
+	EOF = "EOF"
 }
 
 export enum NodeType {
-	OBJECT,
-	ARRAY,
-	STRING,
-	NUMBER,
-	BOOLEAN,
-	NULL
+	OBJECT = "OBJECT",
+	ARRAY = "ARRAY",
+	STRING = "STRING",
+	NUMBER = "NUMBER",
+	BOOLEAN = "BOOLEAN",
+	NULL = "NULL"
 }
 
 export interface Token {

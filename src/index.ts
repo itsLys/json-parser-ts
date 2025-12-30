@@ -59,4 +59,6 @@ const token1: Token = {
 let tokenArr: Token[] = [];
 tokenArr.push(token, token1);
 
+console.log(objectNode);
+
 printTokens(tokenArr);
