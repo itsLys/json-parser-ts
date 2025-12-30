@@ -1,6 +1,8 @@
 import * as fs from "fs";
 import { NodeType, TokenType } from "./definitions"
-import type { ObjectNode, JsonNode } from "./definitions"
+import type { ObjectNode, JsonNode, Token} from "./definitions"
+import { printToken, printTokens} from "./helper"
+
 
 const filePath = process.argv[2];
 const content = readFile(filePath);
@@ -20,7 +22,6 @@ if (filePath == null) {
 }
 
 // console.log(content); // debug
-
 
 // tests
 
@@ -43,7 +44,19 @@ const objectNode: JsonNode = {
 	]),
 }
 
-console.log(nullNode);
-console.log(arrayNode);
-console.log(objectNode);
+const token: Token = {
+	type: TokenType.NULL,
+	value: "Hello",
+	position: 0
+}
 
+const token1: Token = {
+	type: TokenType.RBRACE,
+	value: undefined,
+	position: 20
+}
+
+let tokenArr: Token[] = [];
+tokenArr.push(token, token1);
+
+printTokens(tokenArr);
