@@ -55,6 +55,14 @@ export interface Token {
 	position: number;
 }
 
+export type JsonNode =
+	| ObjectNode
+	| ArrayNode
+	| StringNode
+	| NumberNode
+	| BooleanNode
+	| NullNode;
+
 export interface BaseNode {
 	type: NodeType;
 }
@@ -87,11 +95,3 @@ export interface BooleanNode extends BaseNode {
 export interface NullNode extends BaseNode {
 	type: NodeType.NULL;
 }
-
-export type JsonNode =
-	| ObjectNode
-	| ArrayNode
-	| StringNode
-	| NumberNode
-	| BooleanNode
-	| NullNode;

@@ -1,0 +1,14 @@
+{
+  "id": 123,
+  "name": "Alice",
+  "email": "alice@example.com",
+  "isActive": true,
+  "roles": ["admin", "editor"],
+  "preferences": {
+    "theme": "dark",
+    "notifications": {
+      "email": true,
+      "sms": false
+    }
+  }
+}

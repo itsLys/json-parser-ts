@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "price": 999.99,
+    "tags": ["electronics", "computers"],
+    "stock": null
+  },
+  {
+    "id": 2,
+    "name": "Notebook",
+    "price": 4.5,
+    "tags": ["stationery"],
+    "stock": 150
+  }
+]

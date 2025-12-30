@@ -1,5 +1,4 @@
 import type { Token } from "./definitions"
-import { TokenType } from "./definitions"
 
 export function printToken({ type, value, position }: Token) {
 	console.log(
