@@ -1,7 +1,8 @@
 import * as fs from "fs";
 import { NodeType, TokenType } from "./definitions"
-import type { ObjectNode, JsonNode, Token} from "./definitions"
-import { printToken, printTokens} from "./helper"
+import type { ObjectNode, JsonNode, Token } from "./definitions"
+import { printToken, printTokens } from "./helper"
+import { lex } from "./lexer"
 
 
 const filePath = process.argv[2];
@@ -21,10 +22,12 @@ if (filePath == null) {
 	process.exit(1);
 }
 
-// console.log(content); // debug
+lex(content);
 
-// tests
 
+/*  TEST:
+
+console.log(content); // debug
 const nullNode: JsonNode = {
 	type: NodeType.NULL
 };
@@ -62,3 +65,5 @@ tokenArr.push(token, token1);
 console.log(objectNode);
 
 printTokens(tokenArr);
+
+*/
