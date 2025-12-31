@@ -16,7 +16,26 @@ class Lexer {
 		private input: string,
 	) { }
 
-	nextToken() {}
+	nextToken(): Token {
+		this.skipWhitespace();
+
+		const ch: string = this.currChar;
+		const pos = this.index;
+
+		if (ch === 't' || ch === 'f' || ch === 'n') {
+			const value = this.readKeyword();
+			return {
+				type:
+					value === null ? TokenType.NULL :
+						value === true ? TokenType.TRUE :
+							TokenType.FALSE,
+				value: undefined,
+				position: pos,
+			}
+		}
+		return token;
+	}
+
 	private advance() {
 		this.index++;
 		this.currChar = this.input[this.index];
@@ -34,22 +53,54 @@ class Lexer {
 		}
 	}
 
-	private readString() { }
-	private readNumber() { }
-	private readKeyword() { }
+	private readString() {
+		// "Hello World"
+		let str: string = "";
+		this.advance();
+		while (true) {
+			let char: string = this.currChar;
+			if (char === '"' || !char)
+				break;
+			str += char;
+			this.advance();
+		}
+		this.advance();
+		return str;
+	}
 
+	private readNumber() {
+		return 1;
+	}
+
+	private readKeyword(): boolean | null {
+		if (this.input.startsWith("true", this.index)) {
+			this.index += 4;
+			return true;
+		}
+
+		if (this.input.startsWith("false", this.index)) {
+			this.index += 5;
+			return false;
+		}
+
+		if (this.input.startsWith("null", this.index)) {
+			this.index += 4;
+			return null;
+		}
+		return false;
+		// err
+	}
+
+} // null, false, true
 
 	// private error(msg: string) : void { }
-}
+
 
 export function lex(content: string): Token[] {
 	const lexer: Lexer = new Lexer(content);
-	console.log(content);
 	let t: Token[] = [];
-	t.push(token)
+	t.push(lexer.nextToken())
 	return t;
 }
 
 // str API
-
-

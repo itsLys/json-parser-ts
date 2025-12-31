@@ -22,8 +22,8 @@ if (filePath == null) {
 	process.exit(1);
 }
 
-lex(content);
-
+let tokArr: Token[] = lex(content);
+printTokens(tokArr);
 
 /*  TEST:
 
